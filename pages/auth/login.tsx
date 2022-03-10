@@ -2,6 +2,7 @@ import { Button, Container, Icon } from "@chakra-ui/react";
 import { signIn } from "next-auth/react";
 import * as React from "react";
 import { MdFacebook } from "react-icons/md";
+import Options from "https://framer.com/m/Options-wwV8.js@XbOZCNVMFcuBbJbLah8I";
 
 export default function Login() {
     return (
@@ -21,6 +22,7 @@ export default function Login() {
                     })
                 }
             />
+            <Options />
         </Container>
     );
 }
