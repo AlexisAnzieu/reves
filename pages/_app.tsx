@@ -7,7 +7,7 @@ import {
     Spinner,
 } from "@chakra-ui/react";
 import { SessionProvider, useSession } from "next-auth/react";
-import theme from "./theme";
+import theme from "../theme";
 
 function Rise({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     return (
