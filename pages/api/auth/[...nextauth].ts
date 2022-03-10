@@ -24,7 +24,6 @@ export default NextAuth({
                 // https://developers.facebook.com/docs/graph-api/reference/user/#fields
                 params: { fields: "id,name,email,picture.width(1000)" },
                 async request({ tokens, client, provider }) {
-                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                     return client.userinfo(tokens.access_token!, {
                         // @ts-expect-error
                         params: provider.userinfo?.params,
