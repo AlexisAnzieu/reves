@@ -1,0 +1,9 @@
+.DS_Store
+.env.local
+.vercel
+.vscode
+/.next/
+/build
+/node_modules
+lock.json
+next.lock
