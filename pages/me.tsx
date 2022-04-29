@@ -27,7 +27,7 @@ import { useSession } from "next-auth/react";
 import { createRef, useEffect, useState } from "react";
 import NextLink from "next/link";
 import { directus } from "../helpers/directus";
-import DreamcoinComponent from "../components/DreamcoinComponent";
+import SourireComponent from "../components/SourireComponent";
 
 export default function Me() {
     const { data: session } = useSession() as any;
@@ -78,7 +78,7 @@ export default function Me() {
                 <StatLabel>Nom</StatLabel>
                 <StatNumber>{user.name}</StatNumber>
                 <br />
-                <DreamcoinComponent user={user} />
+                <SourireComponent user={user} />
                 <br />
                 <StatLabel>Email</StatLabel>
                 <StatNumber>{email}</StatNumber>

@@ -13,14 +13,14 @@ import {
 } from "@chakra-ui/react";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
 
-const DreamcoinComponent = ({ user }: any) => {
+const SourireComponent = ({ user }: any) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <>
-            <StatLabel>Dreamcoins</StatLabel>
+            <StatLabel>Sourires</StatLabel>
             <StatNumber>
-                {user.dreamcoin}
+                {user.sourire}
                 <QuestionOutlineIcon
                     ml={4}
                     cursor={"pointer"}
@@ -31,16 +31,11 @@ const DreamcoinComponent = ({ user }: any) => {
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Qu'est qu'un dreamcoin?</ModalHeader>
+                    <ModalHeader>Qu'est qu'un sourire?</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody letterSpacing={2}>
-                        Felicitation! Ta venue ce soir t'a permis de remporter
-                        ton premier dreamcoin!
-                        <br />
-                        <br />
-                        Il s'agit d'une monnaie festive virtuelle que tu peux
-                        accumuler grâce à des concours que nous mettrons
-                        prochainement en place.
+                        Il s'agit d'une monnaie que tu peux obtenir en rendant
+                        service à des associations autour de chez toi.
                         <br />
                         <br /> À terme, tu pourras obtenir des entrees aux
                         futurs evenements payants, des productions de tes DJ
@@ -62,4 +57,4 @@ const DreamcoinComponent = ({ user }: any) => {
     );
 };
 
-export default DreamcoinComponent;
+export default SourireComponent;

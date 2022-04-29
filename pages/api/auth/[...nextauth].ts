@@ -37,7 +37,7 @@ export default NextAuth({
                     name: profile.name,
                     email: profile.email,
                     image: profile.picture.data.url,
-                    dreamcoin: 1,
+                    sourire: 0,
                     pastEvent: []
                 }
             },
@@ -49,7 +49,7 @@ export default NextAuth({
                 ...models.User,
                 createdAt: DataTypes.DATE,
                 updatedAt: DataTypes.DATE,
-                dreamcoin: DataTypes.INTEGER,
+                sourire: DataTypes.INTEGER,
                 pastEvent: DataTypes.JSON,
                 matchedUser: DataTypes.STRING,
             }),
