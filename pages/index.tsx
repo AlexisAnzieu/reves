@@ -68,19 +68,22 @@ export default function Main({ event }: any) {
                     </WrapItem>
                 </Box>
                 <Heading className="gradient-text" p="20px 0px 0px 0px">
-                    {event.name}
+                    REVE.S
                 </Heading>
                 <br />
                 <br />
-                {session!.user?.name === "Alexis Anzieu" && (
+                {/* {session!.user?.name === "Alexis Anzieu" && (
                     <NextLink href="/api/matchUsers">
                         <Button colorScheme="teal" size={"lg"}>
                             Secret Shota trigger
                         </Button>
                     </NextLink>
-                )}
+                )} */}
                 <br />
-                Hosted by{" "}
+                <Heading size={"xl"} color={"orange"}>
+                    Pas d'événement à venir pour le moment
+                </Heading>
+                {/* Hosted by{" "}
                 <Link letterSpacing={2} href={event.location.url} isExternal>
                     {event.location.name}
                     <ExternalLinkIcon mx="2px" />
@@ -119,7 +122,7 @@ export default function Main({ event }: any) {
                             alt=""
                         />
                     </Box>
-                )}
+                )} */}
             </Container>
         </>
     );
