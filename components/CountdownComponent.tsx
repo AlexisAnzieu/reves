@@ -1,10 +1,10 @@
-import { Box, Button, Heading } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import Countdown from "react-countdown";
 import NextLink from "next/link";
 
 const Completionist = () => (
     <>
-        <NextLink href="https://reve-s.net/">
+        <NextLink href="https://app.reve-s.net/">
             <Button colorScheme="teal" size={"lg"}>
                 À qui?
             </Button>
