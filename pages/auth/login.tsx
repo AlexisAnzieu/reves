@@ -40,7 +40,7 @@ export default function Login() {
                     colorScheme={"facebook"}
                     leftIcon={<MdFacebook />}
                 >
-                    <Center>Continue with Facebook</Center>
+                    <Center>Continuer avec Facebook</Center>
                 </Button>
             )}
         </Container>
