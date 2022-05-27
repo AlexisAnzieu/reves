@@ -23,39 +23,37 @@ type MatchedUser = {
 };
 
 export async function getServerSideProps() {
-    const event = await directus
-        .items("Event")
-        .readOne("612c9adb-122a-43aa-83d8-eda6e4bbff51", {
-            fields: ["*", "location.*"],
-        });
+    // const event = await directus
+    //     .items("Event")
+    //     .readOne("612c9adb-122a-43aa-83d8-eda6e4bbff51", {
+    //         fields: ["*", "location.*"],
+    //     });
 
     return {
-        props: {
-            event,
-        },
+        props: {},
     };
 }
 
 export default function Main({ event }: any) {
     const { data: session } = useSession();
     const [matchedUser, setMatchedUser] = useState<MatchedUser | null>(null);
-    useEffect(() => {
-        const fetchMatchedUser = async (): Promise<MatchedUser | null> => {
-            const { matchedUser: matchedUserId }: any = await directus
-                .items("users")
-                .readOne((session as any).user.id, {
-                    fields: ["matchedUser"],
-                });
-            if (!matchedUserId) {
-                return null;
-            }
-            return directus.items("users").readOne(matchedUserId as ID, {
-                fields: ["name", "image"],
-            }) as Promise<MatchedUser>;
-        };
+    // useEffect(() => {
+    //     const fetchMatchedUser = async (): Promise<MatchedUser | null> => {
+    //         const { matchedUser: matchedUserId }: any = await directus
+    //             .items("users")
+    //             .readOne((session as any).user.id, {
+    //                 fields: ["matchedUser"],
+    //             });
+    //         if (!matchedUserId) {
+    //             return null;
+    //         }
+    //         return directus.items("users").readOne(matchedUserId as ID, {
+    //             fields: ["name", "image"],
+    //         }) as Promise<MatchedUser>;
+    //     };
 
-        fetchMatchedUser().then((userId) => setMatchedUser(userId));
-    }, []);
+    //     fetchMatchedUser().then((userId) => setMatchedUser(userId));
+    // }, []);
 
     return (
         <>
@@ -80,9 +78,19 @@ export default function Main({ event }: any) {
                     </NextLink>
                 )} */}
                 <br />
+                Prochain evenement:
                 <Heading size={"xl"} color={"orange"}>
-                    Pas d'événement à venir pour le moment
+                    {/* Pas d'événement à venir pour le moment */}
+                    REVE.S D'AGRUMES
                 </Heading>
+                <a
+                    href="https://www.facebook.com/events/432073024956289"
+                    className="href"
+                >
+                    <Button colorScheme="orange" size={"xl"} mt={5} p={5}>
+                        Plus d'information ici
+                    </Button>
+                </a>
                 {/* Hosted by{" "}
                 <Link letterSpacing={2} href={event.location.url} isExternal>
                     {event.location.name}
