@@ -62,6 +62,15 @@ export default NextAuth({
         maxAge: 60 * 60 * 24 * 7, // 1 week
     },
     callbacks: {
+        async signIn({ user, account, profile }: any) {
+            const picture = profile.picture.data.url;
+            if (user.image !== picture) {
+                await directus.items("users").updateOne(user.id, {
+                    image: picture
+                })
+            }
+            return true
+        },
         async session({ session, user }) {
 
             // only enable this on new event
