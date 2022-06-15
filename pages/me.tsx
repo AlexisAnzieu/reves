@@ -169,6 +169,7 @@ export default function Me() {
                             created with the help of the{" "}
                             <a
                                 href="https://www.termsfeed.com/privacy-policy-generator/"
+                                rel="noopener noreferrer"
                                 target="_blank"
                             >
                                 TermsFeed Privacy Policy Generator
@@ -395,6 +396,7 @@ export default function Me() {
                             can learn more about cookies on{" "}
                             <a
                                 href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies"
+                                rel="noopener noreferrer"
                                 target="_blank"
                             >
                                 TermsFeed website
