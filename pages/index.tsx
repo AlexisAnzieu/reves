@@ -6,6 +6,7 @@ import {
     WrapItem,
     Avatar,
     Link,
+    Image,
 } from "@chakra-ui/react";
 import { useSession } from "next-auth/react";
 import { AttachmentIcon, ExternalLinkIcon } from "@chakra-ui/icons";
@@ -69,7 +70,10 @@ export default function Main({ event }: any) {
                 </Heading>
                 <br />
                 <br />
-                {session!.user?.name === "Alexis Anzieu" && (
+                {(session!.user?.name === "Alexis Anzieu" ||
+                    session!.user?.name === "Margot Chevrier" ||
+                    session!.user?.name === "Florent Casamayou" ||
+                    session!.user?.name === "Jonathan Avenel") && (
                     <NextLink href="/api/matchUsers">
                         <Button colorScheme="teal" size={"lg"}>
                             Secret Shota trigger
