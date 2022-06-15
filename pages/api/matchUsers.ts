@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { directus } from '../../helpers/directus';
 
-const adminUserId = 'da695a17-6250-4473-a1cd-394a70a78118'
+const adminUserId = 'bfbaf8f5-e9cc-438c-9f71-164f48a7f782'
 const shuffleArray = (userIds: string[]): string[] => {
   return [...userIds]
     .map(value => ({ value, sort: Math.random() }))
