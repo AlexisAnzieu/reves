@@ -3,10 +3,9 @@ import {
     Button,
     Container,
     Heading,
-    Link,
-    Image,
     WrapItem,
     Avatar,
+    Link,
 } from "@chakra-ui/react";
 import { useSession } from "next-auth/react";
 import { AttachmentIcon, ExternalLinkIcon } from "@chakra-ui/icons";
@@ -23,37 +22,37 @@ type MatchedUser = {
 };
 
 export async function getServerSideProps() {
-    // const event = await directus
-    //     .items("Event")
-    //     .readOne("612c9adb-122a-43aa-83d8-eda6e4bbff51", {
-    //         fields: ["*", "location.*"],
-    //     });
+    const event = await directus
+        .items("Event")
+        .readOne("1b40f14f-389d-435d-ba2d-4a086abf32f9", {
+            fields: ["*", "location.*"],
+        });
 
     return {
-        props: {},
+        props: { event },
     };
 }
 
 export default function Main({ event }: any) {
     const { data: session } = useSession();
     const [matchedUser, setMatchedUser] = useState<MatchedUser | null>(null);
-    // useEffect(() => {
-    //     const fetchMatchedUser = async (): Promise<MatchedUser | null> => {
-    //         const { matchedUser: matchedUserId }: any = await directus
-    //             .items("users")
-    //             .readOne((session as any).user.id, {
-    //                 fields: ["matchedUser"],
-    //             });
-    //         if (!matchedUserId) {
-    //             return null;
-    //         }
-    //         return directus.items("users").readOne(matchedUserId as ID, {
-    //             fields: ["name", "image"],
-    //         }) as Promise<MatchedUser>;
-    //     };
+    useEffect(() => {
+        const fetchMatchedUser = async (): Promise<MatchedUser | null> => {
+            const { matchedUser: matchedUserId }: any = await directus
+                .items("users")
+                .readOne((session as any).user.id, {
+                    fields: ["matchedUser"],
+                });
+            if (!matchedUserId) {
+                return null;
+            }
+            return directus.items("users").readOne(matchedUserId as ID, {
+                fields: ["name", "image"],
+            }) as Promise<MatchedUser>;
+        };
 
-    //     fetchMatchedUser().then((userId) => setMatchedUser(userId));
-    // }, []);
+        fetchMatchedUser().then((userId) => setMatchedUser(userId));
+    }, []);
 
     return (
         <>
@@ -66,21 +65,22 @@ export default function Main({ event }: any) {
                     </WrapItem>
                 </Box>
                 <Heading className="gradient-text" p="20px 0px 0px 0px">
-                    REVE.S
+                    {event.name}
                 </Heading>
                 <br />
                 <br />
-                {/* {session!.user?.name === "Alexis Anzieu" && (
+                {session!.user?.name === "Alexis Anzieu" && (
                     <NextLink href="/api/matchUsers">
                         <Button colorScheme="teal" size={"lg"}>
                             Secret Shota trigger
                         </Button>
                     </NextLink>
-                )} */}
+                )}
                 <br />
+                {/* 
                 Prochain evenement:
                 <Heading size={"xl"} color={"orange"}>
-                    {/* Pas d'événement à venir pour le moment */}
+                    Pas d'événement à venir pour le moment
                     REVE.S D'AGRUMES
                 </Heading>
                 <a
@@ -90,8 +90,8 @@ export default function Main({ event }: any) {
                     <Button colorScheme="orange" size={"xl"} mt={5} p={5}>
                         Plus d'information ici
                     </Button>
-                </a>
-                {/* Hosted by{" "}
+                </a> */}
+                Hosted by{" "}
                 <Link letterSpacing={2} href={event.location.url} isExternal>
                     {event.location.name}
                     <ExternalLinkIcon mx="2px" />
@@ -130,7 +130,7 @@ export default function Main({ event }: any) {
                             alt=""
                         />
                     </Box>
-                )} */}
+                )}
             </Container>
         </>
     );
