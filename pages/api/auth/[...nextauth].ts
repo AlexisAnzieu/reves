@@ -24,10 +24,9 @@ export default NextAuth({
                 url: "https://graph.facebook.com/me",
                 // https://developers.facebook.com/docs/graph-api/reference/user/#fields
                 params: { fields: "id,name,email,picture.width(1000)" },
-                async request({ tokens, client, provider }) {
+                async request({ tokens, client, provider }: any) {
                     return client.userinfo(tokens.access_token!, {
-                        // @ts-expect-error
-                        params: provider.userinfo?.params,
+                        params: provider.userinfo.params,
                     })
                 },
             },
@@ -62,7 +61,7 @@ export default NextAuth({
         maxAge: 60 * 60 * 24 * 7, // 1 week
     },
     callbacks: {
-        async signIn({ user, account, profile }: any) {
+        async signIn({ user, profile }: any) {
             const picture = profile.picture.data.url;
             if (user.image !== picture) {
                 await directus.items("users").updateOne(user.id, {
