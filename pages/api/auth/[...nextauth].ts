@@ -73,15 +73,15 @@ export default NextAuth({
         async session({ session, user }) {
 
             // only enable this on new event
-            // const userEvent = ['612c9adb-122a-43aa-83d8-eda6e4bbff51', ...(user.pastEvent as string[])];
-            // const refreshedUser = await directus.items("users").updateOne(user.id, {
-            //     pastEvent: [...new Set(userEvent)]
-            // })
+            const userEvent = ['1b40f14f-389d-435d-ba2d-4a086abf32f9', ...(user.pastEvent as string[])];
+            const refreshedUser = await directus.items("users").updateOne(user.id, {
+                pastEvent: [...new Set(userEvent)]
+            })
 
             return {
                 ...session,
                 user: {
-                    ...user,
+                    ...refreshedUser,
                 }
             }
         }
