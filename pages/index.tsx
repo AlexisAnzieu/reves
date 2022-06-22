@@ -66,11 +66,12 @@ export default function Main({ event }: any) {
                     </WrapItem>
                 </Box>
                 <Heading className="gradient-text" p="20px 0px 0px 0px">
-                    {event.name}
+                    {/* {event.name} */}
+                    REVE.S
                 </Heading>
                 <br />
                 <br />
-                {(session!.user?.name === "Alexis Anzieu" ||
+                {/* {(session!.user?.name === "Alexis Anzieu" ||
                     session!.user?.name === "Margot Chevrier" ||
                     session!.user?.name === "Florent Casamayou" ||
                     session!.user?.name === "Jonathan Avenel") && (
@@ -80,13 +81,12 @@ export default function Main({ event }: any) {
                         </Button>
                     </NextLink>
                 )}
-                <br />
-                {/* 
-                Prochain evenement:
+                <br /> */}
+
                 <Heading size={"xl"} color={"orange"}>
                     Pas d'événement à venir pour le moment
-                    REVE.S D'AGRUMES
                 </Heading>
+                {/*    Prochain evenement:
                 <a
                     href="https://www.facebook.com/events/432073024956289"
                     className="href"
@@ -95,7 +95,7 @@ export default function Main({ event }: any) {
                         Plus d'information ici
                     </Button>
                 </a> */}
-                Hosted by{" "}
+                {/* Hosted by{" "}
                 <Link letterSpacing={2} href={event.location.url} isExternal>
                     {event.location.name}
                     <ExternalLinkIcon mx="2px" />
@@ -134,7 +134,7 @@ export default function Main({ event }: any) {
                             alt=""
                         />
                     </Box>
-                )}
+                )} */}
             </Container>
         </>
     );
