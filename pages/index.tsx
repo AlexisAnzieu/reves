@@ -82,19 +82,18 @@ export default function Main({ event }: any) {
                     </NextLink>
                 )}
                 <br /> */}
-
-                <Heading size={"xl"} color={"orange"}>
+                {/* <Heading size={"xl"} color={"orange"}>
                     Pas d'événement à venir pour le moment
-                </Heading>
-                {/*    Prochain evenement:
+                </Heading> */}
+                Prochain evenement:
                 <a
-                    href="https://www.facebook.com/events/432073024956289"
+                    href="https://www.facebook.com/events/653224279754119"
                     className="href"
                 >
                     <Button colorScheme="orange" size={"xl"} mt={5} p={5}>
-                        Plus d'information ici
+                        REVE.S D'AUTOMNE 🍁
                     </Button>
-                </a> */}
+                </a>
                 {/* Hosted by{" "}
                 <Link letterSpacing={2} href={event.location.url} isExternal>
                     {event.location.name}
