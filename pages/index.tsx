@@ -86,6 +86,7 @@ export default function Main({ event }: any) {
                     Pas d'événement à venir pour le moment
                 </Heading> */}
                 Prochain evenement:
+                <br /> <br />
                 <a
                     href="https://www.facebook.com/events/653224279754119"
                     className="href"
